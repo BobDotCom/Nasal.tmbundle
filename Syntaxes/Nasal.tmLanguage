@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>fileTypes</key>
+	<array>
+		<string>nas</string>
+	</array>
+	<key>name</key>
+	<string>Nasal</string>
+	<key>patterns</key>
+	<array>
+		<dict>
+			<key>match</key>
+			<string>\b(if|else|elsif|while|for|foreach|forindex|break|continue)\b</string>
+			<key>name</key>
+			<string>keyword.control.nasal</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>!|\*|\-|\+|~|/|==|=|!=|&lt;=|&gt;=|&lt;|&gt;|!|\?|\:|\*=|/=|\+=|\-=|~=|\.\.\.|\b(and|or)\b</string>
+			<key>name</key>
+			<string>keyword.operator.nasal</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>\b(me|arg|parents|obj)\b</string>
+			<key>name</key>
+			<string>variable.language.nasal</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>\b(func|return|var)\b</string>
+			<key>name</key>
+			<string>storage.type.nas</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>\b(nil)\b</string>
+			<key>name</key>
+			<string>constant.language</string>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>'</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.string.begin.nasal</string>
+				</dict>
+			</dict>
+			<key>comment</key>
+			<string>Single quoted strings</string>
+			<key>end</key>
+			<string>'</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.string.end.nasal</string>
+				</dict>
+			</dict>
+			<key>name</key>
+			<string>string.quoted.single.nasal</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>\\'</string>
+					<key>name</key>
+					<string>constant.character.escape.nasal</string>
+				</dict>
+			</array>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>"</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.string.begin.nasal</string>
+				</dict>
+			</dict>
+			<key>comment</key>
+			<string>Double quoted strings</string>
+			<key>end</key>
+			<string>"</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.string.end.nasal</string>
+				</dict>
+			</dict>
+			<key>name</key>
+			<string>string.quoted.double.nasal</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>\\(x\h{2}|[0-2][0-7]{,2}|3[0-6][0-7]?|37[0-7]?|[4-7][0-7]?|r|n|t|\\|")</string>
+					<key>name</key>
+					<string>constant.character.escape.nasal</string>
+				</dict>
+			</array>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>`</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.string.begin.nasal</string>
+				</dict>
+			</dict>
+			<key>comment</key>
+			<string>Single-byte ASCII character constants</string>
+			<key>end</key>
+			<string>`</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.string.end.nasal</string>
+				</dict>
+			</dict>
+			<key>name</key>
+			<string>string.other</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>comment</key>
+					<string>TODO: Should be limited to single character ascii</string>
+					<key>name</key>
+					<string>constant.character.escape.nasal</string>
+				</dict>
+			</array>
+		</dict>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.comment.nasal</string>
+				</dict>
+			</dict>
+			<key>comment</key>
+			<string>Comments</string>
+			<key>match</key>
+			<string>(#).*$\n?</string>
+			<key>name</key>
+			<string>comment.line.hash.nasal</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Integers, floats, and scientific format</string>
+			<key>match</key>
+			<string>((\b[0-9]+)?\.)?\b[0-9]+([eE][-+]?[0-9]+)?\b</string>
+			<key>name</key>
+			<string>constant.numeric.nasal</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Hex codes</string>
+			<key>match</key>
+			<string>0[x|X][0-9a-fA-F]+</string>
+			<key>name</key>
+			<string>constant.numeric.nasal</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Curly braces</string>
+			<key>match</key>
+			<string>\{|\}</string>
+			<key>name</key>
+			<string>meta.brace.curly.nasal</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Round braces</string>
+			<key>match</key>
+			<string>\(|\)</string>
+			<key>name</key>
+			<string>meta.brace.round.nasal</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Square braces</string>
+			<key>match</key>
+			<string>\[|\]</string>
+			<key>name</key>
+			<string>meta.brace.square.nasal</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Illegal characters</string>
+			<key>match</key>
+			<string>%|\$|@|&amp;|\^|\||\\|`</string>
+			<key>name</key>
+			<string>invalid.illegal</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>TODO: Symbols in hash keys</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Core functions</string>
+			<key>match</key>
+			<string>\b(append|bind|call|caller|chr|closure|cmp|compile|contains|delete|die|find|ghosttype|id|int|keys|left|num|pop|right|setsize|size|sort|split|sprintf|streq|substr|subvec|typeof)\b</string>
+			<key>name</key>
+			<string>entity.name.function.nasal</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>FG ext core functions</string>
+			<key>match</key>
+			<string>\b(abort|abs|aircraftToCart|addcommand|airportinfo|airwaysRoute|assert|carttogeod|cmdarg|courseAndDistance|createDiscontinuity|createViaTo|createWP|createWPFrom|defined|directory|fgcommand|findAirportsByICAO|findAirportsWithinRange|findFixesByID|findNavaidByFrequency|findNavaidsByFrequency|findNavaidsByID|findNavaidsWithinRange|finddata|flightplan|geodinfo|geodtocart|get_cart_ground_intersection|getprop|greatCircleMove|interpolate|isa|logprint|magvar|maketimer|start|stop|restart|maketimestamp|md5|navinfo|parse_markdown|parsexml|print|printf|printlog|rand|registerFlightPlanDelegate|removecommand|removelistener|resolvepath|setlistener|_setlistener|setprop|srand|systime|thisfunc|tileIndex|tilePath|values)\b</string>
+			<key>name</key>
+			<string>entity.name.function.nasal</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>FG ext core functions</string>
+			<key>match</key>
+			<string>\b(singleShot|isRunning|simulatedTime)\b</string>
+			<key>name</key>
+			<string>variable.language.nasal</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>FG ext core variables</string>
+			<key>match</key>
+			<string>\b(D2R|FPS2KT|FT2M|GAL2L|IN2M|KG2LB|KT2FPS|KT2MPS|LG2GAL|LB2KG|M2FT|M2IN|M2NM|MPS2KT|NM2M|R2D)\b</string>
+			<key>name</key>
+			<string>constant.language.nasal</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>FG math funcs</string>
+			<key>match</key>
+			<string>\b(abs|acos|asin|atan2|avg|ceil|clamp|cos|exp|floor|fmod|in|log10|max|min|mod|periodic|pow|round|sin|sgn|sqrt|tan)\b</string>
+			<key>name</key>
+			<string>support.function.nasal</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>FG math class</string>
+			<key>match</key>
+			<string>\b(math)\b</string>
+			<key>name</key>
+			<string>support.class.nasal</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>FG math vars</string>
+			<key>match</key>
+			<string>\b(e|pi)\b</string>
+			<key>name</key>
+			<string>variable.language.nasal</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>FG func props</string>
+			<key>match</key>
+			<string>\b(new|addChild|addChildren|alias|clearValue|equals|getAliasTarget|getAttribute|getBoolValue|getChild|getChildren|getIndex|getName|getNode|getParent|getPath|getType|getValue|getValues|initNode|remove|removeAllChildren|removeChild|removeChildren|setAttribute|setBoolValue|setDoubleValue|setIntValue|setValue|setValues|unalias|compileCondition|condition|copy|dump|getNode|nodeList|runBinding|setAll|wrap|wrapNode)\b</string>
+			<key>name</key>
+			<string>entity.name.function.nasal</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>FG node class</string>
+			<key>match</key>
+			<string>\b(Node)\b</string>
+			<key>name</key>
+			<string>support.class.nasal</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>FG func props variables</string>
+			<key>match</key>
+			<string>\b(props|globals)\b</string>
+			<key>name</key>
+			<string>variable.language.nasal</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>FG clipboard funcs</string>
+			<key>match</key>
+			<string>\b(getText|setText)\b</string>
+			<key>name</key>
+			<string>entity.name.function.nasal</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>FG clipboard class</string>
+			<key>match</key>
+			<string>\b(clipboard)\b</string>
+			<key>name</key>
+			<string>support.class.nasal</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>FG clipboard constants</string>
+			<key>match</key>
+			<string>\b(CLIPBOARD|SELECTION)\b</string>
+			<key>name</key>
+			<string>constant.language.nasal</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>FG geo funcs</string>
+			<key>match</key>
+			<string>\b(new|set|set_lat|set_lon|set_alt|set_latlon|set_x|set_y|set_z|set_xyz|lat|lon|alt|latlon|x|y|z|xyz|is_defined|dump|course_to|distance_to|direct_distance_to|apply_course_distance|test|update|_equals|aircraft_position|click_position|elevation|format|normdeg|normdeg180|put_model|tile_index|tile_path|viewer_position)\b</string>
+			<key>name</key>
+			<string>entity.name.function.nasal</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>FG geo classes</string>
+			<key>match</key>
+			<string>\b(geo|PositionedSearch|Coord)\b</string>
+			<key>name</key>
+			<string>support.class.nasal</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>FG geo constants</string>
+			<key>match</key>
+			<string>\b(ERAD)\b</string>
+			<key>name</key>
+			<string>constant.language.nasal</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>FG io funcs</string>
+			<key>match</key>
+			<string>\b(basename|close|dirname|flush|include|load_nasal|open|read|read_airport_properties|read_properties|readfile|readln|readxml|seek|stat|tell|write|write_properties|writexml)\b</string>
+			<key>name</key>
+			<string>entity.name.function.nasal</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>FG io class</string>
+			<key>match</key>
+			<string>\b(io)\b</string>
+			<key>name</key>
+			<string>support.class.nasal</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>FG io constants</string>
+			<key>match</key>
+			<string>\b(SEEK_CUR|SEEK_END|SEEK_SET)\b</string>
+			<key>name</key>
+			<string>constant.language.nasal</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>FG ospath funcs</string>
+			<key>match</key>
+			<string>\b(new|set|append|concat|exists|canRead|canWrite|isFile|isDir|isRelative|isAbsolute|isNull|create_dir|remove|rename|realpath|file|dir|base|file_base|extension|lower_extension|complete_lower_extension|str|mtime)\b</string>
+			<key>name</key>
+			<string>entity.name.function.nasal</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>FG ospath class</string>
+			<key>match</key>
+			<string>\b(os\.path)\b</string>
+			<key>name</key>
+			<string>support.class.nasal</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>FG gui funcs</string>
+			<key>match</key>
+			<string>\b(popupTip|showDialog|menuEnable|menuBind|setCursor|findElementByName|fpsDisplay|latencyDisplay|popdown|set|setColor|setFont|setBinding|state|del|load|toggle|is_open|reinit|rescan|select|next|previous|set_title|set_button|set_directory|set_file|set_dotfiles|set_pattern|save_flight|load_flight|set_screenshotdir|property_browser|dialog_apply|dialog_update|enable_widgets|nextStyle|setWeight|setWeightOpts|weightChangeHandler|showWeightDialog|showHelpDialog)\b</string>
+			<key>name</key>
+			<string>entity.name.function.nasal</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>FG gui classes</string>
+			<key>match</key>
+			<string>\b(gui|Widget|Dialog|OverlaySelector|FileSelector|DirSelector)\b</string>
+			<key>name</key>
+			<string>support.class.nasal</string>
+		</dict>
+	</array>
+	<key>scopeName</key>
+	<string>source.nasal</string>
+	<key>uuid</key>
+	<string>FB267EFD-4B62-457C-8D3E-17A368A29735</string>
+</dict>
+</plist>
