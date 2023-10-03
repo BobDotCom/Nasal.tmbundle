@@ -11,8 +11,190 @@
 	<key>patterns</key>
 	<array>
 		<dict>
+			<key>begin</key>
+			<string>(?&lt;=func)\s*(\()</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.parameters.begin.nasal</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>(\))</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.parameters.end.nasal</string>
+				</dict>
+			</dict>
+			<key>name</key>
+			<string>meta.other.nasal</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>$self</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>\w</string>
+					<key>name</key>
+					<string>variable.parameter.nasal</string>
+				</dict>
+			</array>
+		</dict>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>support.class.nasal</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.function.nasal</string>
+				</dict>
+				<key>3</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.operator.nasal</string>
+				</dict>
+				<key>4</key>
+				<dict>
+					<key>name</key>
+					<string>storage.type.function.nasal</string>
+				</dict>
+			</dict>
+			<key>comment</key>
+			<string>match stuff like: Sound.play = func() { … }</string>
 			<key>match</key>
-			<string>\b(if|else|elsif|while|for|foreach|forindex|break|continue)\b</string>
+			<string>([a-zA-Z_?.$][\w?.$]*)\.([a-zA-Z_?.$][\w?.$]*)\s*(=)\s*(func)</string>
+			<key>name</key>
+			<string>meta.function.nasal</string>
+		</dict>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.function.nasal</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.operator.nasal</string>
+				</dict>
+				<key>3</key>
+				<dict>
+					<key>name</key>
+					<string>storage.type.function.nasal</string>
+				</dict>
+			</dict>
+			<key>comment</key>
+			<string>match stuff like: play = func() { … }</string>
+			<key>match</key>
+			<string>([a-zA-Z_?$][\w?$]*)\s*(=)\s*(func)</string>
+			<key>name</key>
+			<string>meta.function.nasal</string>
+		</dict>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.function.nasal</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.operator.nasal</string>
+				</dict>
+				<key>3</key>
+				<dict>
+					<key>name</key>
+					<string>storage.type.function.nasal</string>
+				</dict>
+			</dict>
+			<key>comment</key>
+			<string>match stuff like: play = (func() { … }</string>
+			<key>match</key>
+			<string>([a-zA-Z_?$][\w?$]*)\s*(=)\s*\(\s*(func)</string>
+			<key>name</key>
+			<string>meta.function.nasal</string>
+		</dict>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.function.nasal</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>storage.type.function.nasal</string>
+				</dict>
+			</dict>
+			<key>comment</key>
+			<string>match stuff like: foobar: func() { … }</string>
+			<key>match</key>
+			<string>\b([a-zA-Z_?.$][\w?.$]*)\s*:\s*\b(func)</string>
+			<key>name</key>
+			<string>meta.function.hash.nasal</string>
+		</dict>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>storage.type.function.nasal</string>
+				</dict>
+			</dict>
+			<key>comment</key>
+			<string>match stuff like: func() { … }</string>
+			<key>match</key>
+			<string>(func)</string>
+			<key>name</key>
+			<string>meta.function.nasal</string>
+		</dict>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.operator.new.nasal</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.type.instance.nasal</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>(new)\s+(\w+(?:\.\w*)?)</string>
+			<key>name</key>
+			<string>meta.class.instance.constructor</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>\b(if|else|elsif|while|for|foreach|forindex)\b</string>
+			<key>name</key>
+			<string>keyword.control.nasal</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>\b(break(\s+[A-Z]{2,16})?(?=\s*(;|\}))|continue(\s+[A-Z]{2,16})?(?=\s*(;|\}))|([A-Z]{2,16})(?=\s*;([^\)#;]*?;){0,2}[^\)#;]*?\)))\b</string>
 			<key>name</key>
 			<string>keyword.control.nasal</string>
 		</dict>
@@ -30,7 +212,7 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b(func|return|var)\b</string>
+			<string>\b(return|var)\b</string>
 			<key>name</key>
 			<string>storage.type.nasal</string>
 		</dict>
