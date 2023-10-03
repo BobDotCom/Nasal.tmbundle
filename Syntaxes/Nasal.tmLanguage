@@ -532,13 +532,13 @@
 				<key>3</key>
 				<dict>
 					<key>name</key>
-					<string>support.constant.nasal</string>
+					<string>support.variable.nasal</string>
 				</dict>
 			</dict>
 			<key>comment</key>
 			<string>FG math class</string>
 			<key>match</key>
-			<string>\b(math)\.(?:(abs|acos|asin|atan2|avg|ceil|clamp|cos|exp|floor|fmod|in|log10|max|min|mod|periodic|pow|round|sin|sgn|sqrt|tan)|(e|pi))\b</string>
+			<string>\b(math)\.(?:(sqrt|floor|atan|sgn|fmod|cos|min|max|ln|ceil|avg|pow|tan|exp|acos|mod|approx_eq|periodic|asin|clamp|atan2|abs|sin|log10|round)|(_iln10|e|pi|arg))\b</string>
 			<key>name</key>
 			<string>support.other.nasal</string>
 		</dict>
