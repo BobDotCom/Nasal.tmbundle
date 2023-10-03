@@ -178,6 +178,12 @@
 			<string>meta.brace.square.nasal</string>
 		</dict>
 		<dict>
+			<key>match</key>
+			<string>\;</string>
+			<key>name</key>
+			<string>punctuation.terminator.statement.nasal</string>
+		</dict>
+		<dict>
 			<key>captures</key>
 			<dict>
 				<key>1</key>
