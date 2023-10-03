@@ -11,6 +11,14 @@
 	<key>patterns</key>
 	<array>
 		<dict>
+			<key>comment</key>
+			<string>Match identifiers in ALL_CAPS as constants, except when followed by `.`, `(`, `'`, or `"`.</string>
+			<key>match</key>
+			<string>\b([[:upper:]_][[:upper:][:digit:]_]*)\b(?![\.\(\'\"])</string>
+			<key>name</key>
+			<string>constant.other.allcaps.nasal</string>
+		</dict>
+		<dict>
 			<key>begin</key>
 			<string>(?&lt;=func)\s*(\()</string>
 			<key>beginCaptures</key>
