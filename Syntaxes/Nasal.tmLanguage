@@ -532,7 +532,7 @@
 				<key>3</key>
 				<dict>
 					<key>name</key>
-					<string>support.variable.nasal</string>
+					<string>support.constant.nasal</string>
 				</dict>
 			</dict>
 			<key>comment</key>
