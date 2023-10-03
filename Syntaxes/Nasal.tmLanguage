@@ -274,9 +274,9 @@
 			<key>comment</key>
 			<string>Core functions</string>
 			<key>match</key>
-			<string>\b(append|bind|call|caller|chr|closure|cmp|compile|contains|delete|die|find|ghosttype|id|int|keys|left|num|pop|right|setsize|size|sort|split|sprintf|streq|substr|subvec|typeof)\b</string>
+			<string>\b(append|bind|call|caller|chr|closure|cmp|compile|contains|delete|die|find|ghosttype|id|int|keys|left|num|pop|right|setsize|size|sort|split|sprintf|streq|substr|subvec|typeof|readline)\b</string>
 			<key>name</key>
-			<string>entity.name.function.nasal</string>
+			<string>variable.language.nasal</string>
 		</dict>
 		<dict>
 			<key>comment</key>
@@ -284,7 +284,7 @@
 			<key>match</key>
 			<string>\b(abort|abs|aircraftToCart|addcommand|airportinfo|airwaysRoute|assert|carttogeod|cmdarg|courseAndDistance|createDiscontinuity|createViaTo|createWP|createWPFrom|defined|directory|fgcommand|findAirportsByICAO|findAirportsWithinRange|findFixesByID|findNavaidByFrequency|findNavaidsByFrequency|findNavaidsByID|findNavaidsWithinRange|finddata|flightplan|geodinfo|geodtocart|get_cart_ground_intersection|getprop|greatCircleMove|interpolate|isa|logprint|magvar|maketimer|start|stop|restart|maketimestamp|md5|navinfo|parse_markdown|parsexml|print|printf|printlog|rand|registerFlightPlanDelegate|removecommand|removelistener|resolvepath|setlistener|_setlistener|setprop|srand|systime|thisfunc|tileIndex|tilePath|values)\b</string>
 			<key>name</key>
-			<string>entity.name.function.nasal</string>
+			<string>support.function.nasal</string>
 		</dict>
 		<dict>
 			<key>comment</key>
@@ -292,11 +292,11 @@
 			<key>match</key>
 			<string>\b(singleShot|isRunning|simulatedTime)\b</string>
 			<key>name</key>
-			<string>variable.language.nasal</string>
+			<string>support.function.nasal</string>
 		</dict>
 		<dict>
 			<key>comment</key>
-			<string>FG ext core variables</string>
+			<string>FG ext core constants</string>
 			<key>match</key>
 			<string>\b(D2R|FPS2KT|FT2M|GAL2L|IN2M|KG2LB|KT2FPS|KT2MPS|LG2GAL|LB2KG|M2FT|M2IN|M2NM|MPS2KT|NM2M|R2D)\b</string>
 			<key>name</key>
@@ -304,35 +304,11 @@
 		</dict>
 		<dict>
 			<key>comment</key>
-			<string>FG math funcs</string>
-			<key>match</key>
-			<string>\b(abs|acos|asin|atan2|avg|ceil|clamp|cos|exp|floor|fmod|in|log10|max|min|mod|periodic|pow|round|sin|sgn|sqrt|tan)\b</string>
-			<key>name</key>
-			<string>support.function.nasal</string>
-		</dict>
-		<dict>
-			<key>comment</key>
-			<string>FG math class</string>
-			<key>match</key>
-			<string>\b(math)\b</string>
-			<key>name</key>
-			<string>support.class.nasal</string>
-		</dict>
-		<dict>
-			<key>comment</key>
-			<string>FG math vars</string>
-			<key>match</key>
-			<string>\b(e|pi)\b</string>
-			<key>name</key>
-			<string>variable.language.nasal</string>
-		</dict>
-		<dict>
-			<key>comment</key>
 			<string>FG func props</string>
 			<key>match</key>
-			<string>\b(new|addChild|addChildren|alias|clearValue|equals|getAliasTarget|getAttribute|getBoolValue|getChild|getChildren|getIndex|getName|getNode|getParent|getPath|getType|getValue|getValues|initNode|remove|removeAllChildren|removeChild|removeChildren|setAttribute|setBoolValue|setDoubleValue|setIntValue|setValue|setValues|unalias|compileCondition|condition|copy|dump|getNode|nodeList|runBinding|setAll|wrap|wrapNode)\b</string>
+			<string>\b(addChild|addChildren|alias|clearValue|equals|getAliasTarget|getAttribute|getBoolValue|getChild|getChildren|getIndex|getName|getNode|getParent|getPath|getType|getValue|getValues|initNode|remove|removeAllChildren|removeChild|removeChildren|setAttribute|setBoolValue|setDoubleValue|setIntValue|setValue|setValues|unalias|compileCondition|condition|copy|dump|getNode|nodeList|runBinding|setAll|wrap|wrapNode)\b</string>
 			<key>name</key>
-			<string>entity.name.function.nasal</string>
+			<string>support.function.nasal</string>
 		</dict>
 		<dict>
 			<key>comment</key>
@@ -351,12 +327,38 @@
 			<string>variable.language.nasal</string>
 		</dict>
 		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>support.class.nasal</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>support.function.nasal</string>
+				</dict>
+				<key>3</key>
+				<dict>
+					<key>name</key>
+					<string>support.variable.nasal</string>
+				</dict>
+			</dict>
+			<key>comment</key>
+			<string>FG math class</string>
+			<key>match</key>
+			<string>\b(math)\.(?:(abs|acos|asin|atan2|avg|ceil|clamp|cos|exp|floor|fmod|in|log10|max|min|mod|periodic|pow|round|sin|sgn|sqrt|tan)|(e|pi))\b</string>
+			<key>name</key>
+			<string>support.other.nasal</string>
+		</dict>
+		<dict>
 			<key>comment</key>
 			<string>FG clipboard funcs</string>
 			<key>match</key>
 			<string>\b(getText|setText)\b</string>
 			<key>name</key>
-			<string>entity.name.function.nasal</string>
+			<string>support.function.nasal</string>
 		</dict>
 		<dict>
 			<key>comment</key>
@@ -372,15 +374,15 @@
 			<key>match</key>
 			<string>\b(CLIPBOARD|SELECTION)\b</string>
 			<key>name</key>
-			<string>constant.language.nasal</string>
+			<string>support.constant.nasal</string>
 		</dict>
 		<dict>
 			<key>comment</key>
 			<string>FG geo funcs</string>
 			<key>match</key>
-			<string>\b(new|set|set_lat|set_lon|set_alt|set_latlon|set_x|set_y|set_z|set_xyz|lat|lon|alt|latlon|x|y|z|xyz|is_defined|dump|course_to|distance_to|direct_distance_to|apply_course_distance|test|update|_equals|aircraft_position|click_position|elevation|format|normdeg|normdeg180|put_model|tile_index|tile_path|viewer_position)\b</string>
+			<string>\b(set|set_lat|set_lon|set_alt|set_latlon|set_x|set_y|set_z|set_xyz|lat|lon|alt|latlon|x|y|z|xyz|is_defined|dump|course_to|distance_to|direct_distance_to|apply_course_distance|test|update|_equals|aircraft_position|click_position|elevation|format|normdeg|normdeg180|put_model|tile_index|tile_path|viewer_position)\b</string>
 			<key>name</key>
-			<string>entity.name.function.nasal</string>
+			<string>support.function.nasal</string>
 		</dict>
 		<dict>
 			<key>comment</key>
@@ -396,7 +398,7 @@
 			<key>match</key>
 			<string>\b(ERAD)\b</string>
 			<key>name</key>
-			<string>constant.language.nasal</string>
+			<string>support.constant.nasal</string>
 		</dict>
 		<dict>
 			<key>comment</key>
@@ -404,7 +406,7 @@
 			<key>match</key>
 			<string>\b(basename|close|dirname|flush|include|load_nasal|open|read|read_airport_properties|read_properties|readfile|readln|readxml|seek|stat|tell|write|write_properties|writexml)\b</string>
 			<key>name</key>
-			<string>entity.name.function.nasal</string>
+			<string>support.function.nasal</string>
 		</dict>
 		<dict>
 			<key>comment</key>
@@ -420,15 +422,15 @@
 			<key>match</key>
 			<string>\b(SEEK_CUR|SEEK_END|SEEK_SET)\b</string>
 			<key>name</key>
-			<string>constant.language.nasal</string>
+			<string>support.constant.nasal</string>
 		</dict>
 		<dict>
 			<key>comment</key>
 			<string>FG ospath funcs</string>
 			<key>match</key>
-			<string>\b(new|set|append|concat|exists|canRead|canWrite|isFile|isDir|isRelative|isAbsolute|isNull|create_dir|remove|rename|realpath|file|dir|base|file_base|extension|lower_extension|complete_lower_extension|str|mtime)\b</string>
+			<string>\b(set|append|concat|exists|canRead|canWrite|isFile|isDir|isRelative|isAbsolute|isNull|create_dir|remove|rename|realpath|file|dir|base|file_base|extension|lower_extension|complete_lower_extension|str|mtime)\b</string>
 			<key>name</key>
-			<string>entity.name.function.nasal</string>
+			<string>support.function.nasal</string>
 		</dict>
 		<dict>
 			<key>comment</key>
@@ -444,7 +446,7 @@
 			<key>match</key>
 			<string>\b(popupTip|showDialog|menuEnable|menuBind|setCursor|findElementByName|fpsDisplay|latencyDisplay|popdown|set|setColor|setFont|setBinding|state|del|load|toggle|is_open|reinit|rescan|select|next|previous|set_title|set_button|set_directory|set_file|set_dotfiles|set_pattern|save_flight|load_flight|set_screenshotdir|property_browser|dialog_apply|dialog_update|enable_widgets|nextStyle|setWeight|setWeightOpts|weightChangeHandler|showWeightDialog|showHelpDialog)\b</string>
 			<key>name</key>
-			<string>entity.name.function.nasal</string>
+			<string>support.function.nasal</string>
 		</dict>
 		<dict>
 			<key>comment</key>
