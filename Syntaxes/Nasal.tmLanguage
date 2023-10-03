@@ -542,6 +542,110 @@
 			<key>name</key>
 			<string>support.other.nasal</string>
 		</dict>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>support.class.nasal</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>support.function.nasal</string>
+				</dict>
+				<key>3</key>
+				<dict>
+					<key>name</key>
+					<string>support.variable.nasal</string>
+				</dict>
+			</dict>
+			<key>comment</key>
+			<string>FG io class</string>
+			<key>match</key>
+			<string>\b(io)\.(?:(seek|include|stat|is_regular_file|writexml|is_directory|tell|flush|close|dirname|read|subdirectories|write_properties|read_properties|readln|open|write|load_nasal|readxml|basename|readfile|read_airport_properties)|(SEEK_CUR|stderr|SEEK_END|stdout|SEEK_SET|stdin|arg))\b</string>
+			<key>name</key>
+			<string>support.other.nasal</string>
+		</dict>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>support.class.nasal</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>support.function.nasal</string>
+				</dict>
+				<key>3</key>
+				<dict>
+					<key>name</key>
+					<string>support.variable.nasal</string>
+				</dict>
+			</dict>
+			<key>comment</key>
+			<string>FG clipboard class</string>
+			<key>match</key>
+			<string>\b(clipboard)\.(?:(getText|setText)|(SELECTION|CLIPBOARD))\b</string>
+			<key>name</key>
+			<string>support.other.nasal</string>
+		</dict>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>support.class.nasal</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>support.function.nasal</string>
+				</dict>
+				<key>3</key>
+				<dict>
+					<key>name</key>
+					<string>support.variable.nasal</string>
+				</dict>
+			</dict>
+			<key>comment</key>
+			<string>FG geo class</string>
+			<key>match</key>
+			<string>\b(geo)\.(?:(_put_model|put_model|format|click_position|tile_index|normdeg180|tile_path|elevation|normdeg|viewer_position|aircraft_position)|(EPSILON|ERAD|click_coord|Coord|PositionedSearch|arg))\b</string>
+			<key>name</key>
+			<string>support.other.nasal</string>
+		</dict>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>support.class.nasal</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>support.function.nasal</string>
+				</dict>
+				<key>3</key>
+				<dict>
+					<key>name</key>
+					<string>support.variable.nasal</string>
+				</dict>
+			</dict>
+			<key>comment</key>
+			<string>FG gui class</string>
+			<key>match</key>
+			<string>\b(gui)\.(?:(dialog_apply|menuBind|isAutopilotMenuEnabled|update_shader_settings|popdown|latencyDisplay|popupTip|showHelpDialog|enable_widgets|showWeightDialog|save_flight|dialog_update|property_browser|setWeight|setCursor|showDialog|load_flight|fpsDisplay|nextStyle|set_screenshotdir|menuEnable|weightChangeHandler|_createFileDialog|setWeightOpts|findElementByName|set_precip)|(menubarAutoVisibilityMouseModeListener|screenHProp|FILE_DIALOG_SAVE_FILE|latency|weightAndFuel_x|menubarAutoVisibilityEdge|dlg_nasal_close|fps|FileSelector|Widget|cursor_types|mouseMode|common_aircraft_keys|dialog|currTimer|DirSelector|qualityLevel|Dialog|do_welcome|save_flight_sel|terrasync_stalled|precip_ac|OverlaySelector|weightAndFuel_y|autopilotDisableProps|basic_keys|debug_keys|menubarAutoVisibilityListener|load_flight_sel|precip_gui|arg|p|set_screenshotdir_sel|weightDialogOpen|FILE_DIALOG_CHOOSE_DIR|rembrandtOn|menubarVisibility|fdm|FILE_DIALOG_OPEN_FILE|currentMenubarVisibility))\b</string>
+			<key>name</key>
+			<string>support.other.nasal</string>
+		</dict>
 	</array>
 	<key>scopeName</key>
 	<string>source.nasal</string>
