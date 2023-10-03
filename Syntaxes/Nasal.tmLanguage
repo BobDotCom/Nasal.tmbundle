@@ -108,6 +108,12 @@
 					<key>name</key>
 					<string>constant.character.escape.nasal</string>
 				</dict>
+				<dict>
+					<key>match</key>
+					<string>%(?:%|(?:\d+\$)?[+-]?(?:[ 0]|'.{1})?-?\d*(?:\.\d+)?[bcdeEufFgGosxX])</string>
+					<key>name</key>
+					<string>constant.character.escape.nasal</string>
+				</dict>
 			</array>
 		</dict>
 		<dict>
