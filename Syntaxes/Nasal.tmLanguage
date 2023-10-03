@@ -82,7 +82,7 @@
 			<key>comment</key>
 			<string>match stuff like: Sound.play = func() { … }</string>
 			<key>match</key>
-			<string>([a-zA-Z_?.$][\w?.$]*)\.([a-zA-Z_?.$][\w?.$]*)\s*(=)\s*(func)</string>
+			<string>([a-zA-Z_?.$][\w?.$]*)\.([a-zA-Z_?.$][\w?.$]*)\s*(=)\s*(func)\b</string>
 			<key>name</key>
 			<string>meta.function.nasal</string>
 		</dict>
@@ -108,7 +108,7 @@
 			<key>comment</key>
 			<string>match stuff like: play = func() { … }</string>
 			<key>match</key>
-			<string>([a-zA-Z_?$][\w?$]*)\s*(=)\s*(func)</string>
+			<string>([a-zA-Z_?$][\w?$]*)\s*(=)\s*(func)\b</string>
 			<key>name</key>
 			<string>meta.function.nasal</string>
 		</dict>
@@ -134,7 +134,7 @@
 			<key>comment</key>
 			<string>match stuff like: play = (func() { … }</string>
 			<key>match</key>
-			<string>([a-zA-Z_?$][\w?$]*)\s*(=)\s*\(\s*(func)</string>
+			<string>([a-zA-Z_?$][\w?$]*)\s*(=)\s*\(\s*(func)\b</string>
 			<key>name</key>
 			<string>meta.function.nasal</string>
 		</dict>
@@ -155,7 +155,7 @@
 			<key>comment</key>
 			<string>match stuff like: foobar: func() { … }</string>
 			<key>match</key>
-			<string>\b([a-zA-Z_?.$][\w?.$]*)\s*:\s*\b(func)</string>
+			<string>\b([a-zA-Z_?.$][\w?.$]*)\s*:\s*\b(func)\b</string>
 			<key>name</key>
 			<string>meta.function.hash.nasal</string>
 		</dict>
@@ -171,7 +171,7 @@
 			<key>comment</key>
 			<string>match stuff like: func() { … }</string>
 			<key>match</key>
-			<string>(func)</string>
+			<string>\b(func)\b</string>
 			<key>name</key>
 			<string>meta.function.nasal</string>
 		</dict>
