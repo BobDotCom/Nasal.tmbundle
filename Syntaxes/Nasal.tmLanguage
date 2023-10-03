@@ -38,7 +38,7 @@
 			<key>match</key>
 			<string>\b(nil)\b</string>
 			<key>name</key>
-			<string>constant.language</string>
+			<string>constant.language.nil.nasal</string>
 		</dict>
 		<dict>
 			<key>begin</key>
