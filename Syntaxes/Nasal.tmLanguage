@@ -32,7 +32,7 @@
 			<key>match</key>
 			<string>\b(func|return|var)\b</string>
 			<key>name</key>
-			<string>storage.type.nas</string>
+			<string>storage.type.nasal</string>
 		</dict>
 		<dict>
 			<key>match</key>
