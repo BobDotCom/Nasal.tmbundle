@@ -111,39 +111,25 @@
 			</array>
 		</dict>
 		<dict>
-			<key>begin</key>
-			<string>`</string>
-			<key>beginCaptures</key>
+			<key>captures</key>
 			<dict>
-				<key>0</key>
+				<key>1</key>
 				<dict>
 					<key>name</key>
 					<string>punctuation.definition.string.begin.nasal</string>
 				</dict>
-			</dict>
-			<key>comment</key>
-			<string>Single-byte ASCII character constants</string>
-			<key>end</key>
-			<string>`</string>
-			<key>endCaptures</key>
-			<dict>
-				<key>0</key>
+				<key>2</key>
 				<dict>
 					<key>name</key>
 					<string>punctuation.definition.string.end.nasal</string>
 				</dict>
 			</dict>
+			<key>comment</key>
+			<string>Single-byte ASCII character constants</string>
+			<key>match</key>
+			<string>(`).(`)</string>
 			<key>name</key>
 			<string>string.other</string>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>comment</key>
-					<string>TODO: Should be limited to single character ascii</string>
-					<key>name</key>
-					<string>constant.character.escape.nasal</string>
-				</dict>
-			</array>
 		</dict>
 		<dict>
 			<key>captures</key>
