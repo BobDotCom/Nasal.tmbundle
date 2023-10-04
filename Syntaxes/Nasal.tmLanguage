@@ -466,7 +466,7 @@
 			<key>match</key>
 			<string>\b(abort|abs|aircraftToCart|addcommand|airportinfo|airwaysRoute|assert|carttogeod|cmdarg|courseAndDistance|createDiscontinuity|createViaTo|createWP|createWPFrom|defined|directory|fgcommand|findAirportsByICAO|findAirportsWithinRange|findFixesByID|findNavaidByFrequency|findNavaidsByFrequency|findNavaidsByID|findNavaidsWithinRange|finddata|flightplan|geodinfo|geodtocart|get_cart_ground_intersection|getprop|greatCircleMove|interpolate|isa|logprint|magvar|maketimer|start|stop|restart|maketimestamp|md5|navinfo|parse_markdown|parsexml|print|printf|printlog|rand|registerFlightPlanDelegate|removecommand|removelistener|resolvepath|setlistener|_setlistener|setprop|srand|systime|thisfunc|tileIndex|tilePath|values)\b</string>
 			<key>name</key>
-			<string>support.function.nasal</string>
+			<string>variable.language.nasal</string>
 		</dict>
 		<dict>
 			<key>comment</key>
@@ -474,7 +474,7 @@
 			<key>match</key>
 			<string>\b(singleShot|isRunning|simulatedTime)\b</string>
 			<key>name</key>
-			<string>support.function.nasal</string>
+			<string>variable.language.nasal</string>
 		</dict>
 		<dict>
 			<key>comment</key>
