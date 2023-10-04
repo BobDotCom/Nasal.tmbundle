@@ -360,14 +360,6 @@
 			<string>constant.numeric.nasal</string>
 		</dict>
 		<dict>
-			<key>comment</key>
-			<string>Square braces</string>
-			<key>match</key>
-			<string>\[|\]</string>
-			<key>name</key>
-			<string>meta.brace.square.nasal</string>
-		</dict>
-		<dict>
 			<key>match</key>
 			<string>\;</string>
 			<key>name</key>
