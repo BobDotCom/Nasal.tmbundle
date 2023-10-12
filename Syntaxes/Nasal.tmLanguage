@@ -20,43 +20,8 @@
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>(?&lt;=func)\s*(\()</string>
+			<string>([a-zA-Z_?.$][\w?.$]*)\.([a-zA-Z_?.$][\w?.$]*)\s*(=)\s*(func)\s*(\()</string>
 			<key>beginCaptures</key>
-			<dict>
-				<key>1</key>
-				<dict>
-					<key>name</key>
-					<string>punctuation.definition.parameters.begin.nasal</string>
-				</dict>
-			</dict>
-			<key>end</key>
-			<string>(\))</string>
-			<key>endCaptures</key>
-			<dict>
-				<key>1</key>
-				<dict>
-					<key>name</key>
-					<string>punctuation.definition.parameters.end.nasal</string>
-				</dict>
-			</dict>
-			<key>name</key>
-			<string>meta.other.nasal</string>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>include</key>
-					<string>$self</string>
-				</dict>
-				<dict>
-					<key>match</key>
-					<string>\w</string>
-					<key>name</key>
-					<string>variable.parameter.nasal</string>
-				</dict>
-			</array>
-		</dict>
-		<dict>
-			<key>captures</key>
 			<dict>
 				<key>1</key>
 				<dict>
@@ -78,16 +43,44 @@
 					<key>name</key>
 					<string>storage.type.function.nasal</string>
 				</dict>
+				<key>5</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.parameters.begin.nasal</string>
+				</dict>
 			</dict>
 			<key>comment</key>
 			<string>match stuff like: Sound.play = func() { … }</string>
-			<key>match</key>
-			<string>([a-zA-Z_?.$][\w?.$]*)\.([a-zA-Z_?.$][\w?.$]*)\s*(=)\s*(func)\b</string>
+			<key>end</key>
+			<string>(\))</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.parameters.end.nasal</string>
+				</dict>
+			</dict>
 			<key>name</key>
 			<string>meta.function.nasal</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>$self</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>\w</string>
+					<key>name</key>
+					<string>variable.parameter.nasal</string>
+				</dict>
+			</array>
 		</dict>
 		<dict>
-			<key>captures</key>
+			<key>begin</key>
+			<string>([a-zA-Z_?$][\w?$]*)\s*(=)\s*(func)\s*(\()</string>
+			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
 				<dict>
@@ -103,17 +96,45 @@
 				<dict>
 					<key>name</key>
 					<string>storage.type.function.nasal</string>
+				</dict>
+				<key>4</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.parameters.begin.nasal</string>
 				</dict>
 			</dict>
 			<key>comment</key>
 			<string>match stuff like: play = func() { … }</string>
-			<key>match</key>
-			<string>([a-zA-Z_?$][\w?$]*)\s*(=)\s*(func)\b</string>
+			<key>end</key>
+			<string>(\))</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.parameters.end.nasal</string>
+				</dict>
+			</dict>
 			<key>name</key>
 			<string>meta.function.nasal</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>$self</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>\w</string>
+					<key>name</key>
+					<string>variable.parameter.nasal</string>
+				</dict>
+			</array>
 		</dict>
 		<dict>
-			<key>captures</key>
+			<key>begin</key>
+			<string>([a-zA-Z_?$][\w?$]*)\s*(=)\s*\(\s*(func)\s*(\()</string>
+			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
 				<dict>
@@ -130,16 +151,44 @@
 					<key>name</key>
 					<string>storage.type.function.nasal</string>
 				</dict>
+				<key>4</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.parameters.begin.nasal</string>
+				</dict>
 			</dict>
 			<key>comment</key>
 			<string>match stuff like: play = (func() { … }</string>
-			<key>match</key>
-			<string>([a-zA-Z_?$][\w?$]*)\s*(=)\s*\(\s*(func)\b</string>
+			<key>end</key>
+			<string>(\))</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.parameters.end.nasal</string>
+				</dict>
+			</dict>
 			<key>name</key>
 			<string>meta.function.nasal</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>$self</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>\w</string>
+					<key>name</key>
+					<string>variable.parameter.nasal</string>
+				</dict>
+			</array>
 		</dict>
 		<dict>
-			<key>captures</key>
+			<key>begin</key>
+			<string>\b([a-zA-Z_?.$][\w?.$]*)\s*:\s*\b(func)\s*(\()</string>
+			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
 				<dict>
@@ -151,29 +200,83 @@
 					<key>name</key>
 					<string>storage.type.function.nasal</string>
 				</dict>
+				<key>3</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.parameters.begin.nasal</string>
+				</dict>
 			</dict>
 			<key>comment</key>
 			<string>match stuff like: foobar: func() { … }</string>
-			<key>match</key>
-			<string>\b([a-zA-Z_?.$][\w?.$]*)\s*:\s*\b(func)\b</string>
+			<key>end</key>
+			<string>(\))</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.parameters.end.nasal</string>
+				</dict>
+			</dict>
 			<key>name</key>
 			<string>meta.function.hash.nasal</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>$self</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>\w</string>
+					<key>name</key>
+					<string>variable.parameter.nasal</string>
+				</dict>
+			</array>
 		</dict>
 		<dict>
-			<key>captures</key>
+			<key>begin</key>
+			<string>\b(func)\s*(\()</string>
+			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
 				<dict>
 					<key>name</key>
 					<string>storage.type.function.nasal</string>
 				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.parameters.begin.nasal</string>
+				</dict>
 			</dict>
 			<key>comment</key>
 			<string>match stuff like: func() { … }</string>
-			<key>match</key>
-			<string>\b(func)\b</string>
+			<key>end</key>
+			<string>(\))</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.parameters.end.nasal</string>
+				</dict>
+			</dict>
 			<key>name</key>
 			<string>meta.function.nasal</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>$self</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>\w</string>
+					<key>name</key>
+					<string>variable.parameter.nasal</string>
+				</dict>
+			</array>
 		</dict>
 		<dict>
 			<key>captures</key>
