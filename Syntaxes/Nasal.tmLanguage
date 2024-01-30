@@ -11,12 +11,64 @@
 	<key>patterns</key>
 	<array>
 		<dict>
+			<key>match</key>
+			<string>\.{3}</string>
+			<key>name</key>
+			<string>support.type.ellipsis.nasal</string>
+		</dict>
+		<dict>
+			<key>include</key>
+			<string>#comment</string>
+		</dict>
+		<dict>
 			<key>comment</key>
 			<string>Match identifiers in ALL_CAPS as constants, except when followed by `.`, `(`, `'`, or `"`.</string>
 			<key>match</key>
 			<string>\b([[:upper:]_][[:upper:][:digit:]_]*)\b(?![\.\(\'\"])</string>
 			<key>name</key>
 			<string>constant.other.allcaps.nasal</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>\b(0x(?i:\h)+)</string>
+			<key>name</key>
+			<string>constant.numeric.integer.hexadecimal.nasal</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>\b(0o[0-7]+)</string>
+			<key>name</key>
+			<string>constant.numeric.integer.octal.nasal</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>\b(?i:(\d+\.\d*(e[\-\+]?\d+)?))(?=[^[:alpha:]_])</string>
+			<key>name</key>
+			<string>constant.numeric.float.nasal</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>(?&lt;=[^[:alnum:]_])(?i:(\.\d+(e[\-\+]?\d+)?))</string>
+			<key>name</key>
+			<string>constant.numeric.float.nasal</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>\b(?i:(\d+e[\-\+]?\d+))</string>
+			<key>name</key>
+			<string>constant.numeric.float.nasal</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>\b\d+</string>
+			<key>name</key>
+			<string>constant.numeric.integer.decimal.nasal</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>\b(nil)\b</string>
+			<key>name</key>
+			<string>constant.language.nil.nasal</string>
 		</dict>
 		<dict>
 			<key>begin</key>
@@ -67,13 +119,7 @@
 			<array>
 				<dict>
 					<key>include</key>
-					<string>$self</string>
-				</dict>
-				<dict>
-					<key>match</key>
-					<string>\w</string>
-					<key>name</key>
-					<string>variable.parameter.nasal</string>
+					<string>#function_parameters</string>
 				</dict>
 			</array>
 		</dict>
@@ -121,13 +167,7 @@
 			<array>
 				<dict>
 					<key>include</key>
-					<string>$self</string>
-				</dict>
-				<dict>
-					<key>match</key>
-					<string>\w</string>
-					<key>name</key>
-					<string>variable.parameter.nasal</string>
+					<string>#function_parameters</string>
 				</dict>
 			</array>
 		</dict>
@@ -175,13 +215,7 @@
 			<array>
 				<dict>
 					<key>include</key>
-					<string>$self</string>
-				</dict>
-				<dict>
-					<key>match</key>
-					<string>\w</string>
-					<key>name</key>
-					<string>variable.parameter.nasal</string>
+					<string>#function_parameters</string>
 				</dict>
 			</array>
 		</dict>
@@ -224,13 +258,7 @@
 			<array>
 				<dict>
 					<key>include</key>
-					<string>$self</string>
-				</dict>
-				<dict>
-					<key>match</key>
-					<string>\w</string>
-					<key>name</key>
-					<string>variable.parameter.nasal</string>
+					<string>#function_parameters</string>
 				</dict>
 			</array>
 		</dict>
@@ -268,13 +296,7 @@
 			<array>
 				<dict>
 					<key>include</key>
-					<string>$self</string>
-				</dict>
-				<dict>
-					<key>match</key>
-					<string>\w</string>
-					<key>name</key>
-					<string>variable.parameter.nasal</string>
+					<string>#function_parameters</string>
 				</dict>
 			</array>
 		</dict>
@@ -326,12 +348,6 @@
 			<string>\b(return|var)\b</string>
 			<key>name</key>
 			<string>storage.type.nasal</string>
-		</dict>
-		<dict>
-			<key>match</key>
-			<string>\b(nil)\b</string>
-			<key>name</key>
-			<string>constant.language.nil.nasal</string>
 		</dict>
 		<dict>
 			<key>begin</key>
@@ -431,59 +447,39 @@
 			<string>string.other</string>
 		</dict>
 		<dict>
-			<key>captures</key>
-			<dict>
-				<key>1</key>
-				<dict>
-					<key>name</key>
-					<string>punctuation.definition.comment.nasal</string>
-				</dict>
-			</dict>
-			<key>comment</key>
-			<string>Comments</string>
-			<key>match</key>
-			<string>(#).*$\n?</string>
-			<key>name</key>
-			<string>comment.line.hash.nasal</string>
-		</dict>
-		<dict>
-			<key>comment</key>
-			<string>Integers, floats, and scientific format</string>
-			<key>match</key>
-			<string>((\b[0-9]+)?\.)?\b[0-9]+([eE][-+]?[0-9]+)?\b</string>
-			<key>name</key>
-			<string>constant.numeric.nasal</string>
-		</dict>
-		<dict>
-			<key>comment</key>
-			<string>Hex codes</string>
-			<key>match</key>
-			<string>0[x|X][0-9a-fA-F]+</string>
-			<key>name</key>
-			<string>constant.numeric.nasal</string>
-		</dict>
-		<dict>
 			<key>match</key>
 			<string>\;</string>
 			<key>name</key>
 			<string>punctuation.terminator.statement.nasal</string>
 		</dict>
 		<dict>
-			<key>captures</key>
+			<key>begin</key>
+			<string>\[</string>
+			<key>beginCaptures</key>
 			<dict>
-				<key>1</key>
+				<key>0</key>
 				<dict>
 					<key>name</key>
 					<string>punctuation.section.scope.begin.nasal</string>
 				</dict>
-				<key>2</key>
+			</dict>
+			<key>end</key>
+			<string>\]</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>0</key>
 				<dict>
 					<key>name</key>
 					<string>punctuation.section.scope.end.nasal</string>
 				</dict>
 			</dict>
-			<key>match</key>
-			<string>(\[)(\])</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>$self</string>
+				</dict>
+			</array>
 		</dict>
 		<dict>
 			<key>begin</key>
@@ -544,73 +540,118 @@
 			</array>
 		</dict>
 		<dict>
-			<key>comment</key>
-			<string>Illegal characters</string>
-			<key>match</key>
-			<string>%|\$|@|&amp;|\^|\||\\|`</string>
-			<key>name</key>
-			<string>invalid.illegal</string>
+			<key>include</key>
+			<string>#illegal</string>
 		</dict>
 		<dict>
 			<key>comment</key>
 			<string>TODO: Symbols in hash keys</string>
 		</dict>
 		<dict>
-			<key>comment</key>
-			<string>Core functions</string>
-			<key>match</key>
-			<string>\b(append|bind|call|caller|chr|closure|cmp|compile|contains|delete|die|find|ghosttype|id|int|keys|left|num|pop|right|setsize|size|sort|split|sprintf|streq|substr|subvec|typeof|readline)\b</string>
-			<key>name</key>
-			<string>variable.language.nasal</string>
+			<key>include</key>
+			<string>#builtins</string>
 		</dict>
 		<dict>
-			<key>comment</key>
-			<string>FG ext core functions</string>
-			<key>match</key>
-			<string>\b(abort|abs|aircraftToCart|addcommand|airportinfo|airwaysRoute|assert|carttogeod|cmdarg|courseAndDistance|createDiscontinuity|createViaTo|createWP|createWPFrom|defined|directory|fgcommand|findAirportsByICAO|findAirportsWithinRange|findFixesByID|findNavaidByFrequency|findNavaidsByFrequency|findNavaidsByID|findNavaidsWithinRange|finddata|flightplan|geodinfo|geodtocart|get_cart_ground_intersection|getprop|greatCircleMove|interpolate|isa|logprint|magvar|maketimer|start|stop|restart|maketimestamp|md5|navinfo|parse_markdown|parsexml|print|printf|printlog|rand|registerFlightPlanDelegate|removecommand|removelistener|resolvepath|setlistener|_setlistener|setprop|srand|systime|thisfunc|tileIndex|tilePath|values)\b</string>
-			<key>name</key>
-			<string>variable.language.nasal</string>
+			<key>include</key>
+			<string>#function_call</string>
 		</dict>
+	</array>
+	<key>repository</key>
+	<dict>
+		<key>builtins</key>
 		<dict>
-			<key>comment</key>
-			<string>FG ext core functions</string>
-			<key>match</key>
-			<string>\b(singleShot|isRunning|simulatedTime)\b</string>
-			<key>name</key>
-			<string>variable.language.nasal</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>comment</key>
+					<string>Core functions</string>
+					<key>match</key>
+					<string>\b(append|bind|call|caller|chr|closure|cmp|compile|contains|delete|die|find|ghosttype|id|int|keys|left|num|pop|right|setsize|size|sort|split|sprintf|streq|substr|subvec|typeof|readline)\b</string>
+					<key>name</key>
+					<string>variable.language.nasal</string>
+				</dict>
+				<dict>
+					<key>comment</key>
+					<string>FG ext core functions</string>
+					<key>match</key>
+					<string>\b(abort|abs|aircraftToCart|addcommand|airportinfo|airwaysRoute|assert|carttogeod|cmdarg|courseAndDistance|createDiscontinuity|createViaTo|createWP|createWPFrom|defined|directory|fgcommand|findAirportsByICAO|findAirportsWithinRange|findFixesByID|findNavaidByFrequency|findNavaidsByFrequency|findNavaidsByID|findNavaidsWithinRange|finddata|flightplan|geodinfo|geodtocart|get_cart_ground_intersection|getprop|greatCircleMove|interpolate|isa|logprint|magvar|maketimer|start|stop|restart|maketimestamp|md5|navinfo|parse_markdown|parsexml|print|printf|printlog|rand|registerFlightPlanDelegate|removecommand|removelistener|resolvepath|setlistener|_setlistener|setprop|srand|systime|thisfunc|tileIndex|tilePath|values)\b</string>
+					<key>name</key>
+					<string>variable.language.nasal</string>
+				</dict>
+				<dict>
+					<key>comment</key>
+					<string>FG ext core functions</string>
+					<key>match</key>
+					<string>\b(singleShot|isRunning|simulatedTime)\b</string>
+					<key>name</key>
+					<string>variable.language.nasal</string>
+				</dict>
+				<dict>
+					<key>comment</key>
+					<string>FG ext core constants</string>
+					<key>match</key>
+					<string>\b(D2R|FPS2KT|FT2M|GAL2L|IN2M|KG2LB|KT2FPS|KT2MPS|LG2GAL|LB2KG|M2FT|M2IN|M2NM|MPS2KT|NM2M|R2D)\b</string>
+					<key>name</key>
+					<string>constant.language.nasal</string>
+				</dict>
+				<dict>
+					<key>comment</key>
+					<string>FG func props</string>
+					<key>match</key>
+					<string>\b(addChild|addChildren|alias|clearValue|equals|getAliasTarget|getAttribute|getBoolValue|getChild|getChildren|getIndex|getName|getNode|getParent|getPath|getType|getValue|getValues|initNode|remove|removeAllChildren|removeChild|removeChildren|setAttribute|setBoolValue|setDoubleValue|setIntValue|setValue|setValues|unalias|compileCondition|condition|copy|dump|getNode|nodeList|runBinding|setAll|wrap|wrapNode)\b</string>
+					<key>name</key>
+					<string>support.function.nasal</string>
+				</dict>
+				<dict>
+					<key>comment</key>
+					<string>FG node class</string>
+					<key>match</key>
+					<string>\b(Node)\b</string>
+					<key>name</key>
+					<string>support.class.nasal</string>
+				</dict>
+				<dict>
+					<key>comment</key>
+					<string>FG func props variables</string>
+					<key>match</key>
+					<string>\b(props|globals)\b</string>
+					<key>name</key>
+					<string>variable.language.nasal</string>
+				</dict>
+			</array>
 		</dict>
+		<key>comment</key>
 		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.comment.nasal</string>
+				</dict>
+			</dict>
 			<key>comment</key>
-			<string>FG ext core constants</string>
+			<string>Comments</string>
 			<key>match</key>
-			<string>\b(D2R|FPS2KT|FT2M|GAL2L|IN2M|KG2LB|KT2FPS|KT2MPS|LG2GAL|LB2KG|M2FT|M2IN|M2NM|MPS2KT|NM2M|R2D)\b</string>
+			<string>(#).*$\n?</string>
 			<key>name</key>
-			<string>constant.language.nasal</string>
+			<string>comment.line.hash.nasal</string>
 		</dict>
+		<key>expressions</key>
 		<dict>
-			<key>comment</key>
-			<string>FG func props</string>
-			<key>match</key>
-			<string>\b(addChild|addChildren|alias|clearValue|equals|getAliasTarget|getAttribute|getBoolValue|getChild|getChildren|getIndex|getName|getNode|getParent|getPath|getType|getValue|getValues|initNode|remove|removeAllChildren|removeChild|removeChildren|setAttribute|setBoolValue|setDoubleValue|setIntValue|setValue|setValues|unalias|compileCondition|condition|copy|dump|getNode|nodeList|runBinding|setAll|wrap|wrapNode)\b</string>
-			<key>name</key>
-			<string>support.function.nasal</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#illegal</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#builtins</string>
+				</dict>
+			</array>
 		</dict>
-		<dict>
-			<key>comment</key>
-			<string>FG node class</string>
-			<key>match</key>
-			<string>\b(Node)\b</string>
-			<key>name</key>
-			<string>support.class.nasal</string>
-		</dict>
-		<dict>
-			<key>comment</key>
-			<string>FG func props variables</string>
-			<key>match</key>
-			<string>\b(props|globals)\b</string>
-			<key>name</key>
-			<string>variable.language.nasal</string>
-		</dict>
+		<key>function_call</key>
 		<dict>
 			<key>begin</key>
 			<string>\b([a-zA-Z_?$][\w?$]*)(\()</string>
@@ -649,7 +690,82 @@
 				</dict>
 			</array>
 		</dict>
-	</array>
+		<key>function_parameters</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#keyword_arguments</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#comment</string>
+				</dict>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>variable.parameter.function.nasal</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.separator.parameters.nasal</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>\b(?:(\w*))\s*(?:(,)|(?=[\n\)]))</string>
+				</dict>
+			</array>
+		</dict>
+		<key>illegal</key>
+		<dict>
+			<key>comment</key>
+			<string>Illegal characters. TODO: Check if this should include all non-alphanum/symbols</string>
+			<key>match</key>
+			<string>%|\$|@|&amp;|\^|\||\\|`</string>
+			<key>name</key>
+			<string>invalid.illegal</string>
+		</dict>
+		<key>keyword_arguments</key>
+		<dict>
+			<key>begin</key>
+			<string>\b(\w*)\s*(=)(?!=)</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>variable.parameter.function.keyword.nasal</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.operator.assignment.nasal</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>\s*(?:(,)|(?=\)))</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.separator.parameters.nasal</string>
+				</dict>
+			</dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>$self</string>
+				</dict>
+			</array>
+		</dict>
+	</dict>
 	<key>scopeName</key>
 	<string>source.nasal</string>
 	<key>uuid</key>
